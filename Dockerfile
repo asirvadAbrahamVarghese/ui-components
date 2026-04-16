@@ -1,4 +1,4 @@
-FROM docker.io/node:20-trixie
+FROM docker.io/node:22-trixie
 
 WORKDIR /ui-components
 COPY . /ui-components
