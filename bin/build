@@ -9,7 +9,7 @@ docker build . -t $image --no-cache
 
 # Extract the package from the image
 container_id=$(docker create $image)
-package=$(docker run --rm -it --entrypoint /bin/bash $image -c "cd pkg && ls -1 *.tgz" | tr -d '\r')
+package=$(docker run --rm --entrypoint /bin/bash $image -c "cd pkg && ls -1 *.tgz" | tr -d '\r')
 docker cp "$container_id:/ui-components/pkg/$package" pkg
 docker rm "$container_id"
 
