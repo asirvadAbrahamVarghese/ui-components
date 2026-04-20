@@ -5,4 +5,4 @@ COPY . /ui-components
 
 RUN git clean -fdx
 RUN yarn install
-RUN yarn pack
+RUN yarn pack --out pkg/%s-%v.tgz

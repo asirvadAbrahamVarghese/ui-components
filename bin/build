@@ -9,12 +9,12 @@ docker build . -t $image --no-cache
 
 # Extract the package from the image
 container_id=$(docker create $image)
-package=$(docker run --rm -it --entrypoint /bin/bash $image -c "ls -1 manageiq-ui-components-*.tgz" | tr -d '\r')
-docker cp "$container_id:/ui-components/$package" pkg
+package=$(docker run --rm -it --entrypoint /bin/bash $image -c "cd pkg && ls -1 *.tgz" | tr -d '\r')
+docker cp "$container_id:/ui-components/pkg/$package" pkg
 docker rm "$container_id"
 
 echo
-echo "Package 'pkg/$package' has been built."
+echo "Package '$package' has been built."
 echo
 
 # Optionally publish the image
