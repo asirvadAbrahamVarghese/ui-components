@@ -1,8 +1,7 @@
 @use 'sass:math';
-@import 'colors';
-@import 'dialog-editor';
-@import 'dialog-editor-toolbox';
-@import 'dialog-editor-boxes';
+@use 'dialog-editor';
+@use 'dialog-editor-toolbox';
+@use 'dialog-editor-boxes';
 
 /* Begin Patternfly Tab overrides used in the Dialog Editor */
 
